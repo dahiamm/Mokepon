@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika&family=Bahiana&family=Fredericka+the+Great&display=swap');
+
+body {
+    font-family: 'Bahiana', sans-serif;
+    background-image: url(img/fondo.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#seleccionar_mascota {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+    color: #FF8400;
+    font-family: 'Fredericka the Great', serif;
+    font-size: 65px;
+    font-weight: bold;
+    text-shadow: -1px 0 #4F200D, 0 1px #4F200D, 1px 0 #4F200D, 0 -1px #4F200D, -2px 2px 0 #4F200D, 2px 2px 0 #4F200D, 1px 1px #4F200D, 2px 2px #4F200D, 3px 3px #4F200D, 4px 4px #4F200D, 5px 5px #4F200D;
+}
+
+.logo img{
+    width: 25px;
+}
+
+.subtitulo {
+    font-size: 35px;
+    color: #F6F1E9;
+    text-shadow: 0px 0px 9px #FF8400;
+    margin: 10px;
+}
+
+.tarjetas, .tarjetas-ataques {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#contenedor-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 10px;
+}
+
+.tarjeta-mokepon {
+    width: 185px;
+    height: 80px;
+    background: linear-gradient(rgb(245, 219, 92, 0.8), rgb(243, 188, 86, 0.8), rgb(239, 155, 80, 0.8), rgb(233, 122, 74), rgb(226, 84, 68, 0.8));
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    margin: 10px;
+    border: 1px solid #FD841F;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: #4F200D;
+}
+
+.tarjeta-mokepon img {
+    width: 100px;
+}
+
+#elemento img {
+    width: 50px;
+    height: 50px;
+}
+
+.tarjeta-mokepon, #boton-mascota, .boton-ataque, #boton-reiniciar:hover {
+    cursor: pointer;
+}
+
+.tarjetas input {
+    display: none;
+}
+
+.tarjetas input:checked+label {
+    background: linear-gradient(rgb(225, 162, 246), rgb(200, 127, 192), rgb(174, 92, 140), rgb(146, 58, 91), rgb(116, 22, 47));
+    color: #FFD93D;
+    box-shadow: 1px 1px 10px #4F200D;
+    border: none;
+}
+
+#boton-mascota {
+    width: 180px;
+    height: 40px;
+    padding: 0 2em;
+    margin: 30px;
+    border: 2px solid #FD841F;
+    position: relative;
+    border-radius: 5px;
+    background: linear-gradient(rgb(233, 142, 57), rgb(236, 166, 104), rgb(235, 191, 149), rgb(230, 215, 194), rgb(217, 240, 241));
+    font-family: 'Bahiana', sans-serif;
+    font-size: 25px;
+    color: #4F200D;
+    box-shadow: 5px 5px 5px #4F200D;
+    transition:800ms ease all;
+    outline:none;
+}
+
+#boton-reiniciar {
+    padding: 0 2em;
+    margin: 10px;
+    border: 2px solid #FD841F;
+    position: relative;
+    border-radius: 5px;
+    background: linear-gradient(rgb(233, 142, 57), rgb(236, 166, 104), rgb(235, 191, 149), rgb(230, 215, 194), rgb(217, 240, 241));
+    font-family: 'Bahiana', sans-serif;
+    font-size: 20px;
+    color: #4F200D;
+    box-shadow: 5px 5px 5px #4F200D;
+    transition:800ms ease all;
+    outline:none;
+}
+
+#boton-mascota:hover, #boton-reiniciar:hover {
+    background:#FD841F;
+    color:#FFE194;
+}
+
+#boton-mascota::before, #boton-mascota::after, #boton-reiniciar::before, #boton-reiniciar::after {
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #4F200D;
+    transition: 400ms ease all;
+}
+
+#boton-mascota:after, #boton-reiniciar::after {
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+
+#boton-mascota:hover:before, #boton-mascota:hover:after, #boton-reiniciar:hover:before, #boton-reiniciar:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
+
+#seleccionar_ataque {
+    flex-direction: column;
+    align-items: center;
+}
+
+.boton-ataque {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(rgb(245, 219, 92, 0.8), rgb(243, 188, 86, 0.8), rgb(239, 155, 80, 0.8), rgb(233, 122, 74, 0.8), rgb(226, 84, 68, 0.8));
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    font-family: 'Bahiana', sans-serif;
+    font-size: 25px;
+    color: #4F200D;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+#boton-fuego:hover {
+    background: #f22720;
+    color: #FFD93D;
+    box-shadow: 1px 1px 10px #f22720;
+    border: none;
+}
+
+#boton-agua:hover {
+    background: #c9f7ca;
+    color: #FFD93D;
+    box-shadow: 1px 1px 10px #c9f7ca;
+    border: none;
+}
+
+#boton-tierra:hover {
+    background: #7d8b02;
+    color: #FFD93D;
+    box-shadow: 1px 1px 10px #7d8b02;
+    border: none;
+}
+
+#mensajes {
+    width: 270px;
+    height: 110px;
+    margin: 15px;
+    background: linear-gradient(rgb(161, 92, 1, 0.65), rgb(181, 95, 1, 0.65), rgb(202, 98, 0, 0.65), rgb(223, 100, 0, 0.65), rgb(244, 102, 0, 0.65));
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #F6F1E9;
+    font-size: 20px;
+    font-family: 'Andika', sans-serif;
+}
+
+.ataques {
+    display: grid;
+    grid-template-columns: 250px 250px;
+    height: 150px;
+    place-items: center;
+    font-size: 20px;
+    border-radius: 10px;
+    overflow: auto;
+    color: #F6F1E9;
+    justify-content: center;
+    align-items: center;
+}
+
+.ataques h3 {
+    text-align: center;
+    color: #FF8400;
+    font-family: 'Fredericka the Great', serif;
+    font-weight: bold;
+    text-shadow: -1px 0 #4F200D, 0 1px #4F200D, 1px 0 #4F200D, 0 -1px #4F200D, -2px 2px 0 #4F200D, 2px 2px 0 #4F200D, 1px 1px #4F200D, 2px 2px #4F200D, 3px 3px #4F200D, 4px 4px #4F200D, 5px 5px #4F200D;
+    font-size: 20px;
+}
+
+.imagenes-combate {
+    display: grid;
+    grid-template-columns: 150px 350px 150px;
+    place-items: center;
+}
+
+.mascotas {
+    display: flex;
+    flex-direction: column;
+}
+
+.mascotas img {
+    width: 150px;
+}
+
+.mascotas h3 {
+    text-align: center;
+    position: relative;
+    color: #F6F1E9;
+    text-shadow: 0px 0px 9px #FF8400;
+    font-size: 25px;
+    margin: auto;
+}
+
+#ataques-del-jugador, #ataques-del-enemigo {
+    display: contents;
+    font-size: 20px;
+    color: #F6F1E9;
+    text-shadow: 0px 0px 9px #FF8400;
+}
+
+#ataques-del-jugador p, #ataques-del-enemigo p {
+    margin: 3px 0;
+    padding: 0;
+}
+
+#ataques-vidas-jugador, #ataques-vidas-enemigo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+}
+
+#vidas-jugador, #vidas-enemigo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+}
+
+#resultado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+}
+
+@media (max-width: 560px) {
+    .titulo {
+        font-size: 50px;
+    }
+    .subtitulo {
+        font-size: 30px;
+    }
+    .tarjetas {
+        flex-direction: column;
+    }
+    #contenedor-tarjetas {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, auto);
+    }
+    #seleccionar_mascota {
+        justify-content: normal
+    }
+    .ataques {
+        grid-template-columns: 130px 130px;
+        font-size: 9px;
+    }
+    .imagenes-combate {
+        grid-template-columns: 100px;
+        margin-top: 30px;
+    }
+}
